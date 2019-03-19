@@ -1,9 +1,22 @@
+/* Implement different style for when screen is mobile*/
+
 body, html {
     height: 100%;
     background-position: center;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
+a{
+    text-decoration: none;
+    color: #f8f9fa;
+    background-color: #dee2e626;
+}
+a:link:hover{
+    text-decoration: none;
+    color: #f8f9fa;
+}
 
 
 .IMAGE{
@@ -14,7 +27,6 @@ body, html {
     background-repeat: no-repeat;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
-    font-family: 'EB Garamond', serif;
     font-size: 1vw;
     position: absolute;
     height: 100%;
@@ -42,4 +54,28 @@ body, html {
 
 .col-md{
     padding-top: 15vw;
+}
+
+.navbar{
+    background-color: rgba(5, 5, 5, 0.65);
+    z-index: 10;
+    color: white;
+}
+
+.SUBHEADING{
+    padding-top: 2vh;
+    padding-left: 8vw;
+    padding-bottom: 3vh;
+}
+
+p{
+    padding-left: 11vw;
+}
+
+.dropdown-menu:hover{
+    display: block;
+}
+
+h5{
+    padding-top: 5vh;
 }

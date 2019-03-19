@@ -2,8 +2,19 @@ body, html {
     height: 100%;
     background-position: center;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
+a{
+    text-decoration: none;
+    color: #f8f9fa;
+    background-color: #dee2e626;
+}
+a:link:hover{
+    text-decoration: none;
+    color: #f8f9fa;
+}
 
 
 .IMAGE{
@@ -13,12 +24,11 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'EB Garamond', serif;
     font-size: 1vw;
     position: absolute;
     height: 100%;
     width: 100%;
+    margin-top: -6vh;
 }
 
 #name{
@@ -26,10 +36,12 @@ body, html {
 }
 
 .main_buttons{
-    font-size: 2.2vw;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.8vw;
     horiz-align: center;
     display: table-cell;
     vertical-align: middle;
+    height: 90vh;
 }
 
 #rightButton{
@@ -47,7 +59,7 @@ body, html {
 
 @keyframes fadein {
     0%{
-        background-color: rgba(34, 51, 90, 0);
+        background-color: rgba(0, 0, 0, 0);
     }
     100%{
         background-color: rgba(41, 42, 41, 0.86);
@@ -59,7 +71,7 @@ body, html {
     animation-timing-function: ease-in-out;
     animation-duration: .35s;
     animation-fill-mode: forwards;
-    outline: solid 5px rgba(95, 95, 95, 0.5);
+    outline: solid 5px rgba(107, 107, 107, 0.29);
     transition: outline 0.6s linear;
 }
 
@@ -77,5 +89,8 @@ body, html {
     animation-fill-mode: forwards;
 }
 
-
-
+.navbar{
+    background-color: rgba(5, 5, 5, 0.65);
+    z-index: 10;
+    color: white;
+}
