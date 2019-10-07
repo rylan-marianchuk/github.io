@@ -108,3 +108,14 @@ body{
         font-size: 2em;
     }
 }
+.table{
+    text-align: center;
+}
+.table th{
+    background-color: #444;
+    color: white;
+}
+.table td, .table th {
+    border: 0px solid #ddd;
+    padding: 2vw;
+}

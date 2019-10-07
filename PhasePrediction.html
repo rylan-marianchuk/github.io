@@ -30,20 +30,25 @@
     </div>
 </div>
 <ul class="side-menu">
-    <li class="menu-items"><a href="home.html"> H O M E </a></li>
+    <li class="menu-items"><a href="index.html"> H O M E </a></li>
     <li class="menu-items"><a href="projects.html">P R O J E C T S</a></li>
-    <li class="menu-items"><a href="personal2.html">P E R S O N A L</a></li>
+    <li class="menu-items"><a href="">P E R S O N A L</a></li>
     <li class="menu-items"><a href="blog-posts.html">P O S T S</a></li>
 </ul>
 <div class="side-nav"></div>
 
 <div class="background-heading rellax" data-rellax-speed="1">
     <div class="heading">P R O J E C T</div>
-    <div class="heading">PREDICTION OF PHASE EQUILIBRIA USING MACHINE LEARNING MODELS</div>
+    <div class="heading">PREDICTION OF PHASE EQUILIBRIA OF AN EMULSION SYSTEM WITH MACHINE LEARNING CLASSIFICATION MODELS</div>
 </div>
 <div class="subtitle">
 
     AUGUST, 2019
+
+</div>
+<div class="subtitle" style="font-size: 1em;">
+
+    NOTE: We are currently in the process of writing a technical paper on this work. Code can be found <a href="https://github.com/iGEMCalgary/PhaseDiagramGeneration">here</a>.
 
 </div>
 
@@ -99,12 +104,12 @@
         (a readable way to present 4-dimensional data). They look this this:
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ryonix/1.embed" height="825" width="100%"></iframe>
         <hr>
-        <span class="figure-desc">FIGURE 2: An example of the data given that is to be classified with machine learning approaches.</span>
+        <span class="figure-desc">FIGURE 2: An example of the data collected <i>in vitro</i> that is to be classified with machine learning approaches.</span>
         <br><br>
         This is analogous to the data that will be collected in the lab, however the colors here do not correspond to a phase yet.
         <br>
         Our task is to then approximate the <span class="tooltip highlight" title="Finding the color division"><u>phase boundaries</u></span> by statistical approximations.
-        I attempt to use \(\mathcal{K}\)-Nearest Neighbours and Support Vector Classification.
+        I implement and compare \(\mathcal{K}\)-Nearest Neighbours and Support Vector Classification.
     </div>
 
     <div class="sub-section">OUTLINE OF DATA</div>
@@ -176,12 +181,97 @@
     <div class="sub-section">COMPARISON OF \(\mathcal{K}\)-NEAREST NEIGHBOURS AND SUPPORT VECTOR CLASSIFICATION</div>
     <hr class="under-subheading">
     <div class="text-block">
-        I implemented 10-fold cross validation on a range of parameter combinations with both SVC and KNN. The figure below
-        de
-
-
+        I implemented 10-fold cross validation on a range of parameter combinations with both SVC and KNN and chose the model
+        with the lowest error rate. KNN performed significantly worse than SVC. The table below lists the optimal parameters for only
+        the Support Vector Classification model over four temperatures.
+        <br>
+        <br>
+        <table class="table">
+            <tr>
+                <th>Temperature</th>
+                <th>\(\gamma\)</th>
+                <th>COST</th>
+                <th>CV Error Rate</th>
+                <th>Reiterated CV Error Rate</th>
+            </tr>
+            <tr>
+                <td>300K</td>
+                <td>0.71</td>
+                <td>10200</td>
+                <td>0.2571</td>
+                <td>*0.2571*</td>
+            </tr>
+            <tr>
+                <td>310K</td>
+                <td>0.25</td>
+                <td>12200</td>
+                <td>0.1714</td>
+                <td>*0.2571*</td>
+            </tr>
+            <tr>
+                <td>323K</td>
+                <td>0.15</td>
+                <td>1800</td>
+                <td>0.1571</td>
+                <td>*0.2571*</td>
+            </tr>
+            <tr>
+                <td>343K</td>
+                <td>0.62</td>
+                <td>200</td>
+                <td>0.2428</td>
+                <td>*0.2571*</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <img src="img/PhasePrediction/GeneratedDiagSVM.PNG" width="90%" height="90%" class="figure">
+        <hr>
+        <span class="figure-desc">FIGURE 3: </span>
     </div>
-    <img src="img/PhasePrediction/ternaryPhaseDiagram.gif" width="90%" height="90%" class="figure">
+
+    <div class="sub-section">CLASSIFICATION CONFIDENCE</div>
+    <hr class="under-subheading">
+    <div class="text-block">
+        I wondered which points are difficult for the SVM to classify? Those areas on the ternary diagram which have multiple
+        classes do not have straightforward division by a hyperplane. How do we identify these areas?
+        <br>
+        <br>
+        I generated 180 SVC models with different parameter combinations going from underfit to overfit, and found those points
+        that changed the most over these parameter changes. High number of changes implied a low 'confidence' in classification
+        of that point. The confidence function depended on the number of changes in the phase label with increased overfitting.
+        <br>
+        <br>
+        The figure below visually displays my approach to identifying areas of low classification confidence.
+
+        By identifying the areas of low confidence, the lab can construct emulsions with the corresponding points of low
+        confidence to give the SVC data in areas that would have the greatest impact in descreasing the classification error.
+        <img src="img/PhasePrediction/ConfidenceVisual.svg" width="90%" height="90%" class="figure">
+        <hr>
+        <span class="figure-desc">FIGURE 3: </span>
+    </div>
+
+    <div class="sub-section">PHASE CHANGE OVER TEMPERATURE</div>
+    <hr class="under-subheading">
+    <div class="text-block">
+        Emulsions have different chemical properties with changes in temperature. I used a linear transformation to reduce
+        the ternary plot into two dimensions to allow multiple phase diagrams to be viewed in 3-Dimensional space
+        with temperature as a third value. The GIF below depicts the phase change over temperature in 3-D space.
+    </div>
+    <img src="img/PhasePrediction/ternaryPhaseDiagram.gif" width="60%" height="60%" class="figure">
+    <div class="sub-section">CONCLUSION</div>
+    <hr class="under-subheading">
+    <div class="text-block">
+        This model provides knowledge on emulsion formulation, which is an indispensable part of the UCalgary 2019 iGEM
+        project, allowing for viable refinement of canola oil by dispensing chlorophyll that would be detrimental to its
+        production. It is desirable to find the correct ratios of the emulsion constituents that lead to a Winsor 1 type
+        equilibrium because the pure oil phase is left without a microemulsion. Determining these phase equilibria
+        boundaries is therefore an imminent task which we provided a solution with the application of \(\mathcal{K}\)-Nearest Neighbours
+        and Support Vector Classification, both machine learning classification models. With merely sparse data samples
+        gathered in vitro, Support Vector Classification predicted phase boundaries at its best with an error rate of 17%
+        which could be improved with more samples taken in regions of low classification confidence. Hence, this method
+        provides a practical alternative to other deterministic methods which require rigorous effort and time.
+    </div>
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
