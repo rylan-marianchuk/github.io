@@ -1,0 +1,47 @@
+h3{
+    margin-top:9vh;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.2em;
+}
+hr{
+    padding: 0 5vw 0 5vw;
+}
+
+#nav-button{
+    margin-top: -9vh;
+}
+.sub-section{
+    color: #005584;
+    padding-left: 3vw;
+    text-align: left;
+    font-size: 2vh;
+    margin-top: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+}
+
+
+.under-subheading{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0) 100%);
+    margin: 1vh 10vw 0 3vw;
+}
+.text-block{
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    padding: 2vh 5vw 2vh 5vw;
+    line-height: 3.5vh;
+}
+.container{
+    padding: 0 15vw;
+}
+p{
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+
+}
+.sub-container{
+    padding: 0 8vw;
+}

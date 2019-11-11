@@ -47,8 +47,50 @@ body{
 .project-archive-grid{
     flex-wrap: wrap;
     flex-direction: row;
-    display: flex;
+    grid-column-gap: 5rem;
+    grid-row-gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
     width: 100%;
     justify-content: space-between;
 
+}
+
+#EmulsionPicture{
+    background: url("https://vmnhlg.bn.files.1drv.com/y4mb34TtGl5VifR9rTGKyTf13_dbV4QsQTZect5opUIz_c9gIe9J3ZoYPFc79JUVwGarjOlqsn2cHbOmbjLaOfkvHDCBz9jSw_38OBBxU_9titqyLr3Dridmo6Yny9tu9vFj9sOFS5EhZxaAGxYfkUfP2gGGmMqZNknGDplz4cvBJuPAyGN5wwrzesTmwVvGdJr4f5GoabVsrW2uSrVWFwbrg?width=660&height=416&cropmode=none") no-repeat center;
+}
+
+#SeedGradingPicture{
+     background: url("https://2019.igem.org/wiki/images/7/71/T--Calgary--MGM-S-Fig1.png");
+}
+#ProteinStructurePicture{
+    background: url("https://lh6.googleusercontent.com/aRnpptx2Obd0XowjbTbLVIR2XteNjnTSLILu1izXoGpxTqcIF8Ezdb_XWrL5Pl3b4uk29MbnsyjXf7NARwPnrkjcME4G8OTE0Xx7hu-osY1wh4K2vx_N405eqVcsZmqKaZM5hxvYY9k") no-repeat center;
+}
+#BilliardsAIPicture{
+    background: url("https://5zdffq.bn.files.1drv.com/y4mdFPq3lB_KGtEZ_gkl5_MDE7ZdMEjX8oWTZM4oeWx4Ynb1q-cLTX-gIlg80fJ5Ul1DJUyowrZVxbER8mEyipUpLrZLxHzbhBvNXFCHmtvehNUjT56I82dHYcvJXRzCVIzu6ZJYOWU2JNTmEBcdzjZmbWOikoHKX0F_y9D6MjklXcdqmuviUA3GMNFSD2Oof9S0XZAe93RALWjEgvy84O7xQ?width=660&height=380&cropmode=none") no-repeat center;
+}
+#SideScrollerPicture{
+    background: url("https://5zdkfq.bn.files.1drv.com/y4mic7EcGYiXZdxmEn-oGd1NQBEhyDaO78w_7hNDLZcXZ9l6aIikGoSvQs8aofSCxttoQJTVCMmBzibsDg3k16a1n0V9XXwPKARFWpYahFELY65e4ZKAeIiuNQUBZlSyc0yAEKZTjlsuFHK7bZpIn5ruX-WuRw-LWU51n6oQaF8o_P0L_0YNVYtgSiymwajPVlfRMOb8QR3GSzlEOgj8FRCfA?width=660&height=372&cropmode=none") no-repeat center;
+}
+.project-name{
+    /* display: inline-block; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: .92em;
+    padding: 20px;
+    color: white;
+    transition: .8s;
+    /* margin-left: 6vw; */
+    padding-top: 35vh;
+    text-align: center;
+    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.2), 0 12px 12px 0 rgba(0, 0, 0, 0.19)
+}
+
+.project-container{
+    margin: 4vh 4vh;
+}
+
+.title{
+    margin: 0;
+    background: rgba(105, 105, 105, 0.75);
+    font-size: 1.3em;
 }

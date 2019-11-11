@@ -25,12 +25,13 @@
 <div class="top-nav">
     <button class="trigger"><img src="img/MenuIcon.png" style="max-height: 100%; max-width: 100%; width: 50%; height: 35%; pointer-events: none;"></button>
     <div class="navbar">
-        <a href="#home">R Y L A N  &nbsp; M A R I A N C H U K &nbsp; ></a>
-        <a href="#news">P R O J E C T S</a>
+        <a href="index.html">R Y L A N  &nbsp; M A R I A N C H U K &nbsp; ></a>
+        <a href="projects.html">P R O J E C T S</a>
     </div>
 </div>
 <ul class="side-menu">
     <li class="menu-items"><a href="index.html"> H O M E </a></li>
+    <li class="menu-items"><a href="CV.html"> C V </a></li>
     <li class="menu-items"><a href="projects.html">P R O J E C T S</a></li>
     <li class="menu-items"><a href="">P E R S O N A L</a></li>
     <li class="menu-items"><a href="blog-posts.html">P O S T S</a></li>
@@ -39,18 +40,25 @@
 
 <div class="background-heading rellax" data-rellax-speed="1">
     <div class="heading">P R O J E C T</div>
-    <div class="heading">PREDICTION OF PHASE EQUILIBRIA OF AN EMULSION SYSTEM WITH MACHINE LEARNING CLASSIFICATION MODELS</div>
+    <div class="heading">Design of Emulsified Protein Binding System using Classification Algorithms</div>
 </div>
-<div class="subtitle">
 
-    AUGUST, 2019
+<div class="subtitle" style="font-size: 1em;">
+
+    Awarded best software project at the International Genetically Engineered Machine, November 4th, 2019.
 
 </div>
 <div class="subtitle" style="font-size: 1em;">
 
-    NOTE: We are currently in the process of writing a technical paper on this work. Code can be found <a href="https://github.com/iGEMCalgary/PhaseDiagramGeneration">here</a>.
+    Please visit an updated version of this work on our UCalgary iGEM team's wiki <b><a href="https://2019.igem.org/Team:Calgary/Model/EmulsionPrediction">here</a></b>.
 
 </div>
+<div class="subtitle">
+
+    October, 2019
+
+</div>
+
 
 <div class="content-page rellax" data-rellax-speed="3">
     <br>
@@ -59,13 +67,15 @@
     <hr class="under-subheading">
 
     <div class="text-block">
-        This summer I was selected to work on modelling research with the UCalgary iGEM team. Annually, the international
+        This summer I was selected to work on software and modelling research with the UCalgary iGEM team. Annually, the international
         Genetically Engineered Machine (iGEM) competition brings teams across the world to present projects that apply
         the principles of genetic engineering and synthetic biology to real-world challenges. The themes of the competition
         are open ended, allowing teams to tackle any problem facing a chosen industry. This year, the iGEM Calgary 2019
         team aims to tackle the issue of green seed within the Canadian canola agricultural industry.
         <span class="tooltip highlight" title="Here is our wiki"><u><a href="https://2019.igem.org/Team:Calgary">Read more about our
-        solution</a></u></span>
+        solution.</a></u></span>
+        <br><br>
+        This post will outline my contribution and learning while working with the team.
     </div>
 
 
@@ -74,22 +84,22 @@
 
     <div class="text-block">
         Oil and water emulsions play a major role in the success of our project. Once solutions containing oil, surfactant,
-        and water are emulsified, they settle out into distinct <span class="tooltip highlight" title="A liquid chemical phase is a distinct homogeneous form of matter with uniform properties."><u>phases</u></span>. These specific types of phases depends (in our case)
-        on four variables: the ratios of oil, water, surfactant, and the temperature of the solution.
+        and water are emulsified, they settle out into distinct <span class="tooltip highlight" title="A liquid chemical phase is a distinct homogeneous form of matter with uniform properties."><u>phases</u></span>.
+        These specific types of phases depends (in our case) on four variables: the ratios of oil, water, surfactant, and the temperature of the solution.
         <br>
         <br>
         The goal is to find the minimum composition of water needed to sufficiently separate out all chlorophyll. However
-        we cannot go through each possible composition of all water, oil, and surfactant. Hence we use machine learning
+        we cannot go through each possible composition of all water, oil, and surfactant. Hence I implemented machine learning
         classification models to generate the phase boundaries which are most statistically probable given sparse training
-        data obtained <i>in vitro</i>.
+        data obtained <i>experimentally </i>.
     </div>
 
-    <div class="sub-section">DESCRIPTION OF PHASES</div>
+    <div class="sub-section">DESCRIPTION OF EQUILIBRIUM PHASES</div>
     <hr class="under-subheading">
 
     <div class="text-block">
         The type of equilibrium after emulsifying classified by phase using the Windsor scale, depicted below.
-        <img src="img/PhasePrediction/EmulsionClasses.jpg" width="90%" height="90%" class="figure">
+        <img src="img/PhasePrediction/EmulsionClassesnew.PNG" width="90%" height="90%" class="figure">
         <hr>
         <span class="figure-desc">FIGURE 1: The classifications of the various emulsion equilibra, which is a function of the temperature of the emulsion and the concentration ratios of
         oil, water, and surfactant.</span>
@@ -100,16 +110,32 @@
     <hr class="under-subheading">
 
     <div class="text-block">
-        It is common practice to display phases as a funciton of the solution composition ratio using a ternary diagram
+        Phase diagrams are graphs used in chemical and material engineering that map the physical properties of a solution
+        as a function of its’ chemical constituents and conditions. Solutions of emulsions can be described using this
+        approach, however the diagrams are normally generated through tedious experimentation. There is also no widely
+        accepted way to model solutions of emulsions, and the few that do require extremely difficult measurements.
+        <br>
+        <br>
+
+        For the purposes of rapid design, we are more interested in correlating the chemical components to it’s Winsor
+        type rather than having a thorough understanding as to why the system behaves the way it does. In a nutshell,
+        Machine Learning excels at identifying correlation and can provide an abstract reading without understanding the
+        underlying thermodynamic molecular details, which makes it the perfect method for us.
+        <br>
+        <br>
+
+        It is common practice to display phases as a function of the solution composition ratio using a ternary diagram
         (a readable way to present 4-dimensional data). They look this this:
         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~ryonix/1.embed" height="825" width="100%"></iframe>
         <hr>
-        <span class="figure-desc">FIGURE 2: An example of the data collected <i>in vitro</i> that is to be classified with machine learning approaches.</span>
+        <span class="figure-desc">FIGURE 2: An example of the data collected <i>experimentally</i> that is to be classified with machine learning approaches.</span>
         <br><br>
         This is analogous to the data that will be collected in the lab, however the colors here do not correspond to a phase yet.
         <br>
+        <br>
         Our task is to then approximate the <span class="tooltip highlight" title="Finding the color division"><u>phase boundaries</u></span> by statistical approximations.
-        I implement and compare \(\mathcal{K}\)-Nearest Neighbours and Support Vector Classification.
+        <b>I implement and compare \(\mathcal{K}\)-Nearest Neighbours and Support Vector Classification. From there, I generated a confidence function which
+        gives a normalized value representing how much the classified point changes when iterating over Support Vector Classification parameters.</b>
     </div>
 
     <div class="sub-section">OUTLINE OF DATA</div>
@@ -192,42 +218,38 @@
                 <th>\(\gamma\)</th>
                 <th>COST</th>
                 <th>CV Error Rate</th>
-                <th>Reiterated CV Error Rate</th>
             </tr>
             <tr>
                 <td>300K</td>
-                <td>0.71</td>
-                <td>10200</td>
-                <td>0.2571</td>
-                <td>*0.2571*</td>
+                <td>0.66</td>
+                <td>18400</td>
+                <td>0.2428</td>
             </tr>
             <tr>
                 <td>310K</td>
                 <td>0.25</td>
                 <td>12200</td>
                 <td>0.1714</td>
-                <td>*0.2571*</td>
             </tr>
             <tr>
                 <td>323K</td>
-                <td>0.15</td>
-                <td>1800</td>
+                <td>0.75</td>
+                <td>8800</td>
                 <td>0.1571</td>
-                <td>*0.2571*</td>
             </tr>
             <tr>
                 <td>343K</td>
-                <td>0.62</td>
-                <td>200</td>
+                <td>0.17</td>
+                <td>10600</td>
                 <td>0.2428</td>
-                <td>*0.2571*</td>
             </tr>
         </table>
         <br>
         <br>
         <img src="img/PhasePrediction/GeneratedDiagSVM.PNG" width="90%" height="90%" class="figure">
         <hr>
-        <span class="figure-desc">FIGURE 3: </span>
+        <span class="figure-desc">FIGURE 3: A completed phase diagram, displaying the phase change at different compositions of oil, water and surfactant.
+        Gamma: 0.66, Cost: 18400, Error Rate: 0.2428. (Dark blue: Winsor 1, grey: Winsor 2, green: Winsor 3, light blue: Winsor 4)</span>
     </div>
 
     <div class="sub-section">CLASSIFICATION CONFIDENCE</div>
@@ -244,11 +266,14 @@
         <br>
         The figure below visually displays my approach to identifying areas of low classification confidence.
 
-        By identifying the areas of low confidence, the lab can construct emulsions with the corresponding points of low
-        confidence to give the SVC data in areas that would have the greatest impact in descreasing the classification error.
+        The lab can choose how to construct their emulsions by choosing to construct an emulsion identified in areas of
+        high classification confidence.
         <img src="img/PhasePrediction/ConfidenceVisual.svg" width="90%" height="90%" class="figure">
         <hr>
-        <span class="figure-desc">FIGURE 3: </span>
+        <span class="figure-desc">FIGURE 3:  The approach at finding a confidence value for each emulsion point. Darker
+            areas of the color gradient show those points that were difficult to classify. Yellow regions show no phase
+            change over all Support Vector Classification parameter changes.
+        </span>
     </div>
 
     <div class="sub-section">PHASE CHANGE OVER TEMPERATURE</div>
@@ -259,6 +284,8 @@
         with temperature as a third value. The GIF below depicts the phase change over temperature in 3-D space.
     </div>
     <img src="img/PhasePrediction/ternaryPhaseDiagram.gif" width="60%" height="60%" class="figure">
+
+
     <div class="sub-section">CONCLUSION</div>
     <hr class="under-subheading">
     <div class="text-block">
@@ -271,9 +298,17 @@
         gathered in vitro, Support Vector Classification predicted phase boundaries at its best with an error rate of 17%
         which could be improved with more samples taken in regions of low classification confidence. Hence, this method
         provides a practical alternative to other deterministic methods which require rigorous effort and time.
+        <br><br>
+        We have patented this work and it was recognized to win numerous categories at the International Genetically Engineered Machine competition.
+        Out of around 170 undergraduate teams, this work won best software and a nomination for best model.
+        See our wiki <b><a href="https://2019.igem.org/Team:Calgary/Model/EmulsionPrediction">here</a></b>.
     </div>
+
 </div>
 
+
+<hr>
+<div class="footer"></div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 <script src="rellax.min.js"></script>
 <script src="script.js"></script>

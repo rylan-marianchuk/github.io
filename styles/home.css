@@ -16,3 +16,11 @@
 .animate-name{
     transform: translateX(-500px);
 }
+body{
+
+    background-image: url("https://7jd6qg.bn.files.1drv.com/y4m_LDgjanYPp8AxqgaFT_26CYPyteNwO7fZwqJtocq9ZfEkl3ZyEyE90pcH-on-tpEtbJxI6jDGMJ-p9cS70Qe62uyfmlSOqCuNsLjMVB6rdCidXQi_fVmbTscvd7DZ94FzpfsaYtZ0snQ9MLeMQM5jBT_M4EqeMxwRUBzpy6mDkROQjJ6dcFHR9iAku7tSAVt4WaafHaUKaQzoxPnlprwRw?width=3588&height=4035&cropmode=none");
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: 50vw;
+    background-position-x: center;
+}
