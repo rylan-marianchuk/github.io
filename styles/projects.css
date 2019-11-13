@@ -72,6 +72,9 @@ body{
 #SideScrollerPicture{
     background: url("https://5zdkfq.bn.files.1drv.com/y4mic7EcGYiXZdxmEn-oGd1NQBEhyDaO78w_7hNDLZcXZ9l6aIikGoSvQs8aofSCxttoQJTVCMmBzibsDg3k16a1n0V9XXwPKARFWpYahFELY65e4ZKAeIiuNQUBZlSyc0yAEKZTjlsuFHK7bZpIn5ruX-WuRw-LWU51n6oQaF8o_P0L_0YNVYtgSiymwajPVlfRMOb8QR3GSzlEOgj8FRCfA?width=660&height=372&cropmode=none") no-repeat center;
 }
+#RubiksPicture{
+    background: white;
+}
 .project-name{
     /* display: inline-block; */
     font-family: 'Montserrat', sans-serif;

@@ -33,8 +33,6 @@
     <li class="menu-items"><a href="index.html"> H O M E </a></li>
     <li class="menu-items"><a href="CV.html"> C V </a></li>
     <li class="menu-items"><a href="projects.html">P R O J E C T S</a></li>
-    <li class="menu-items"><a href="">P E R S O N A L</a></li>
-    <li class="menu-items"><a href="blog-posts.html">P O S T S</a></li>
 </ul>
 <div class="side-nav"></div>
 
@@ -45,12 +43,12 @@
 
 <div class="subtitle" style="font-size: 1em;">
 
-    Awarded best software project at the International Genetically Engineered Machine, November 4th, 2019.
+    This work contributed to the award of best software project at the International Genetically Engineered Machine, November 4th, 2019.
 
 </div>
 <div class="subtitle" style="font-size: 1em;">
 
-    Please visit an updated version of this work on our UCalgary iGEM team's wiki <b><a href="https://2019.igem.org/Team:Calgary/Model/EmulsionPrediction">here</a></b>.
+    Other version of this work on our UCalgary iGEM team's wiki <b><a href="https://2019.igem.org/Team:Calgary/Model/EmulsionPrediction">here</a></b>.
 
 </div>
 <div class="subtitle">
@@ -175,7 +173,7 @@
         can only be 1 or -1. \(\epsilon_i\) is the error for each vector which is constrained by \(\mathcal{C}\), the cost parameter (James et al. 2017).
         <br>
         Since we have four classes to be separated, we applied the one-versus-one approach, where divisions were
-        constructed for each pair of classes, meaning this optimization was solved 6 times ( \(\frac{n(n-1)}{2}\) is the number of distinct pairs between \(n\) elements.)
+        constructed for each pair of classes, meaning this optimization was solved 6 times (the number of distinct pairs between 4 classes).
         Since the data is not linearly separable, a non-linear radial basis function (RBF) was used as a kernel:
         $$K(\vec{v_0}, \vec{v_i}) = e^{- \; \gamma \; \vec{v_0} \; \dot \; \vec{v_i}}$$
         Where \(\vec{v_0}\) is the vector to be labelled, and the kernel is applied on each training vector \(\vec{v_i}\) for this test observation.
@@ -212,7 +210,7 @@
         the Support Vector Classification model over four temperatures.
         <br>
         <br>
-        <table class="table">
+        <table class="table" style="text-align: center;">
             <tr>
                 <th>Temperature</th>
                 <th>\(\gamma\)</th>
