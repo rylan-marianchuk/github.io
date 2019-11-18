@@ -154,7 +154,7 @@
         vectors within the space and assigns a label based on those closest neighbours. The probability given a vector
         from described above will be labeled with phase can be calculated with KNN by:
         $$ Pr( \> Y = y \> | \> X = \vec{v}) = \frac{1}{\mathcal{K}} \sum_{i \in \mathcal{N}}^{} I(\> y_i = y \>)$$
-        Where \(i\) indexes through the \(\mathcal{K}\) nearest vectors in \(\mathcal{N}\) and <i>I</i> is the identity function which outputs a 1 if the label of the neighbour is equal to  and 0 otherwise (James et al. 2017).
+        Where \(i\) indexes through the \(\mathcal{K}\) nearest vectors in \(\mathcal{N}\) and <i>I</i> is the identity function which outputs a 1 if the label of the neighbour is equal to  and 0 otherwise (Hastie et al. 2017).
     </div>
 
     <div class="sub-section">SUPPORT VECTOR CLASSIFICATION</div>
@@ -170,7 +170,7 @@
         $$ y_i(\beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \beta_3 x_{i3} \geq \mathcal{M}(1-\epsilon_i)$$
         $$ \sum\limits_{i=0}^{n} \epsilon_i \leq \mathcal{C}, \>\>\>\>\> \epsilon \geq 0, \>\>\>\>\> y_i \in \{1, -1\}.$$
         Where \(\mathcal{M}\) is the size of the margin, \(\beta_i\) are the parameters defining the hyperplane, \(y_i\) is the label of each vector which
-        can only be 1 or -1. \(\epsilon_i\) is the error for each vector which is constrained by \(\mathcal{C}\), the cost parameter (James et al. 2017).
+        can only be 1 or -1. \(\epsilon_i\) is the error for each vector which is constrained by \(\mathcal{C}\), the cost parameter (Hastie et al. 2017).
         <br>
         Since we have four classes to be separated, we applied the one-versus-one approach, where divisions were
         constructed for each pair of classes, meaning this optimization was solved 6 times (the number of distinct pairs between 4 classes).
@@ -196,7 +196,7 @@
         parameters is calculated as:
         $$ \frac{1}{N}\sum\limits_{i=1}^{K} \sum\limits_{y_p \in Y_i}^{} I(\> y_p \neq y_a ) $$
 
-        Where \(N\) is the number of data points (including train and test), \(y_p\) is the predicted label calculated by the model for all test vectors in partition \(Y_i\) , and \(y_a\) is the actual label of the vector (James et al. 2017).
+        Where \(N\) is the number of data points (including train and test), \(y_p\) is the predicted label calculated by the model for all test vectors in partition \(Y_i\) , and \(y_a\) is the actual label of the vector (Hastie et al. 2017).
         It is not sufficient to merely choose a single subset for testing because it can be an inaccurate representation
         of which points the model can predict well. \(K\)-fold Cross Validation attempts to address this by using \(K\) partitions
         of the data to resample. The error rate is then determined by averaging each of the partition error, providing a
@@ -300,6 +300,11 @@
         We have patented this work and it was recognized to win numerous categories at the International Genetically Engineered Machine competition.
         Out of around 170 undergraduate teams, this work won best software and a nomination for best model.
         See our wiki <b><a href="https://2019.igem.org/Team:Calgary/Model/EmulsionPrediction">here</a></b>.
+    </div>
+    <div class="sub-section">REFERENCES</div>
+    <hr class="under-subheading">
+    <div class="text-block">
+        Hastie, T., Friedman, J., & Tisbshirani, R. (2017). The Elements of statistical learning: Data mining, inference, and prediction. Springer.
     </div>
 
 </div>
